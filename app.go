@@ -150,7 +150,7 @@ func (a *App) deleteProduct(w http.ResponseWriter, r *http.Request) {
 	respondWithJSON(w, http.StatusOK, map[string]string{"result": "success"})
 }
 
-func (a *App) searchProducts(w http.ResponseWriter, r *http.Request) {
+func (a *App) searchProductsByName(w http.ResponseWriter, r *http.Request) {
 	name := r.URL.Query().Get("name")
 	if name == "" {
 		respondWithError(w, http.StatusBadRequest, "Missing 'name' query parameter")
@@ -166,11 +166,21 @@ func (a *App) searchProducts(w http.ResponseWriter, r *http.Request) {
 	respondWithJSON(w, http.StatusOK, products)
 }
 
+func (a *App) healthCheck(w http.ResponseWriter, r *http.Request) {
+	err := a.DB.Ping()
+	if err != nil {
+		respondWithError(w, http.StatusInternalServerError, "Database unreachable")
+		return
+	}
+	respondWithJSON(w, http.StatusOK, map[string]string{"status": "ok"})
+}
+
 func (a *App) initializeRoutes() {
 	a.Router.HandleFunc("/products", a.getProducts).Methods("GET")
 	a.Router.HandleFunc("/product", a.createProduct).Methods("POST")
 	a.Router.HandleFunc("/product/{id:[0-9]+}", a.getProduct).Methods("GET")
 	a.Router.HandleFunc("/product/{id:[0-9]+}", a.updateProduct).Methods("PUT")
 	a.Router.HandleFunc("/product/{id:[0-9]+}", a.deleteProduct).Methods("DELETE")
-	a.Router.HandleFunc("/products/search", a.searchProducts).Methods("GET")
+	a.Router.HandleFunc("/products/search", a.searchProductsByName).Methods("GET")
+	a.Router.HandleFunc("/health", a.healthCheck).Methods("GET")
 }

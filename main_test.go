@@ -209,3 +209,17 @@ func TestSearchProducts(t *testing.T) {
 		t.Errorf("Expected product name to contain 'test', got '%s'", products[0]["name"])
 	}
 }
+
+func TestHealthCheck(t *testing.T) {
+	req, _ := http.NewRequest("GET", "/health", nil)
+	response := executeRequest(req)
+
+	checkResponseCode(t, http.StatusOK, response.Code)
+
+	var m map[string]string
+	json.Unmarshal(response.Body.Bytes(), &m)
+
+	if m["status"] != "ok" {
+		t.Errorf("Expected status to be 'ok'. Got '%s'", m["status"])
+	}
+}
