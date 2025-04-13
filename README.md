@@ -2,6 +2,8 @@
 
 Miriam Palmetshofer | s2410455002
 
+![badge](https://github.com/miriampalmetshofer/cicd-project-pipeline/actions/workflows/go.yml/badge.svg)
+
 This simple Go project is designed to demonstrate a CI/CD pipeline using GitHub Actions. 
 
 ### Helpful commands
