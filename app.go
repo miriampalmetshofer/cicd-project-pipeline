@@ -175,17 +175,6 @@ func (a *App) healthCheck(w http.ResponseWriter, r *http.Request) {
 	respondWithJSON(w, http.StatusOK, map[string]string{"status": "ok"})
 }
 
-// random function to trigger a test coverage failure
-func (a *App) randomFunction(w http.ResponseWriter, r *http.Request) {
-	// fill the function with some code
-	err := a.DB.Ping()
-	if err != nil {
-		respondWithError(w, http.StatusInternalServerError, "Database unreachable")
-		return
-	}
-	respondWithJSON(w, http.StatusOK, map[string]string{"status": "ok"})
-}
-
 func (a *App) initializeRoutes() {
 	a.Router.HandleFunc("/products", a.getProducts).Methods("GET")
 	a.Router.HandleFunc("/product", a.createProduct).Methods("POST")
