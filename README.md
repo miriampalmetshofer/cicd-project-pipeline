@@ -3,6 +3,7 @@
 Miriam Palmetshofer | s2410455002
 
 ![badge](https://github.com/miriampalmetshofer/cicd-project-pipeline/actions/workflows/go.yml/badge.svg)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=miriampalmetshofer_cicd-project-pipeline&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=miriampalmetshofer_cicd-project-pipeline)
 
 This simple Go project is designed to demonstrate a CI/CD pipeline using GitHub Actions. 
 
