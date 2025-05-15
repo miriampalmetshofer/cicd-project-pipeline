@@ -18,7 +18,7 @@ COPY . .
 RUN go build -o main .
 
 # Use a minimal base image for the final container
-FROM debian:bullseye-slim
+FROM gcr.io/distroless/base-debian11
 
 # Create a working directory
 WORKDIR /app
