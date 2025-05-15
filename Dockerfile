@@ -32,3 +32,4 @@ ENTRYPOINT ["./main"]
 # Expose the port the app runs on
 EXPOSE 8010
 
+
