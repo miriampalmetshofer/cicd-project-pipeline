@@ -1,43 +1,33 @@
-# Stage 1: Build the Go binary
-FROM --platform=linux/arm64 golang:1.24 AS builder
+# Start from the official Golang base image
+FROM golang:1.24.1 as builder
 
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy go.mod and go.sum to leverage Docker cache
+# Copy go.mod and go.sum files
 COPY go.mod ./
 COPY go.sum ./
+
+# Download all dependencies
 RUN go mod download
 
-# Copy the rest of the application
+# Copy the rest of the application's source code
 COPY . .
 
-# Build the application
+# Build the Go app
 RUN go build -o main .
-RUN chmod +x main
 
+# Use a minimal base image for the final container
+FROM debian:bullseye-slim
 
-# Stage 2: Create a minimal image
-FROM --platform=linux/arm64 debian:bullseye-slim
-
-# Install necessary CA certs
-RUN apt-get update && apt-get install -y ca-certificates && rm -rf /var/lib/apt/lists/*
-
-WORKDIR /root/
+# Create a working directory
+WORKDIR /app
 
 # Copy the binary from the builder stage
 COPY --from=builder /app/main .
 
-# Hardcoded environment variables
-ENV APP_DB_USERNAME=postgres
-ENV APP_DB_PASSWORD=password
-ENV APP_DB_NAME=postgres
+# Set the entry point for the container
+ENTRYPOINT ["./main"]
 
-# Set environment variables for Go
-ENV GO_ENV=production
-
-# Expose the port your app listens on
+# Expose the port the app runs on
 EXPOSE 8010
-
-# Run the binary
-CMD ["./main"]
