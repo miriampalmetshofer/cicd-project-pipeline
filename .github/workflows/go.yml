@@ -9,16 +9,17 @@ on:
   pull_request:
     branches: [ "main" ]
 
-env:
-  APP_DB_USERNAME: postgres
-  APP_DB_PASSWORD: password
-  APP_DB_NAME: postgres
-
 jobs:
 
   build:
-    name: Build and Test Code
+    name: Build, Test, and Run Docker Image
     runs-on: ubuntu-latest
+
+    env:
+      APP_DB_USERNAME: postgres
+      APP_DB_PASSWORD: password
+      APP_DB_NAME: postgres
+
     steps:
       - uses: actions/checkout@v3
 
@@ -27,15 +28,43 @@ jobs:
         with:
           go-version: 1.24
 
-      # Start postgresql docker container
-      - name: Start postgresql Container
-        run: docker run --name postgres -p 5432:5432 -e POSTGRES_PASSWORD=${APP_DB_PASSWORD} -e POSTGRES_USER=${APP_DB_USERNAME} -e POSTGRES_DB=${APP_DB_NAME} -d postgres
+      - name: Start PostgreSQL container
+        run: |
+          docker run --name postgres \
+            -p 5432:5432 \
+            -e POSTGRES_USER=${APP_DB_USERNAME} \
+            -e POSTGRES_PASSWORD=${APP_DB_PASSWORD} \
+            -e POSTGRES_DB=${APP_DB_NAME} \
+            -d postgres
+        # Wait for PostgreSQL to be ready
+      - name: Wait for DB to be ready
+        run: |
+          until docker exec postgres pg_isready -U $APP_DB_USERNAME; do
+            echo "Waiting for database..."
+            sleep 2
+          done
 
-      - name: Build
+      - name: Build Go App
         run: go build -v ./...
 
-      - name: Test
+      - name: Run Go Tests
         run: go test -v ./...
+
+      - name: Build Docker Image
+        run: docker build -t cicd-project-pipeline .
+
+      - name: Run App Container
+        run: |
+          docker run --name app \
+            --link postgres \
+            -p 8010:8010 \
+            -d cicd-project-pipeline
+
+      - name: Test Health Endpoint
+        run: |
+          sleep 3
+          curl --fail http://localhost:8010/health
+  
 
   sonarCloud:
     needs: build
