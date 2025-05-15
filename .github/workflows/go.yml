@@ -84,3 +84,20 @@ jobs:
           tags: |
             miriampalmetshofer/cicd-project-pipeline:latest
             miriampalmetshofer/cicd-project-pipeline:${{ steps.vars.outputs.sha_short }}
+
+      - name: Scan Docker image with Trivy
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: miriampalmetshofer/cicd-project-pipeline:${{ steps.vars.outputs.sha_short }}
+          format: table
+          exit-code: 1
+          severity: CRITICAL,HIGH
+
+      - name: Scan source code & Dockerfile with Trivy
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: fs
+          scan-ref: .
+          format: table
+          exit-code: 1
+          severity: CRITICAL,HIGH
