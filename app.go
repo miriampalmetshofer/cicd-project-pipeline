@@ -1,11 +1,10 @@
-package cicd_project_pipeline
+package main
 
 import (
 	"database/sql"
+	"encoding/json"
 	"fmt"
 	"log"
-
-	"encoding/json"
 	"net/http"
 	"strconv"
 
@@ -175,6 +174,10 @@ func (a *App) healthCheck(w http.ResponseWriter, r *http.Request) {
 	respondWithJSON(w, http.StatusOK, map[string]string{"status": "ok"})
 }
 
+func (a *App) writeLog(w http.ResponseWriter, r *http.Request) {
+	log.Println("This is a sample log")
+}
+
 func (a *App) initializeRoutes() {
 	a.Router.HandleFunc("/products", a.getProducts).Methods("GET")
 	a.Router.HandleFunc("/product", a.createProduct).Methods("POST")
@@ -183,4 +186,5 @@ func (a *App) initializeRoutes() {
 	a.Router.HandleFunc("/product/{id:[0-9]+}", a.deleteProduct).Methods("DELETE")
 	a.Router.HandleFunc("/products/search", a.searchProductsByName).Methods("GET")
 	a.Router.HandleFunc("/health", a.healthCheck).Methods("GET")
+	a.Router.HandleFunc("/log", a.writeLog).Methods("GET")
 }

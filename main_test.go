@@ -1,4 +1,4 @@
-package cicd_project_pipeline
+package main
 
 import (
 	"bytes"
