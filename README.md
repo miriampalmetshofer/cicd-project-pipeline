@@ -7,6 +7,17 @@ Miriam Palmetshofer | s2410455002
 
 This simple Go project is designed to demonstrate a CI/CD pipeline using GitHub Actions. 
 
+### Run Logging Application
+
+This project includes a simple development setup for elasticsearch, Kibana and Filebeat using Docker.
+To run the logging application:
+**Start Elasticsearch Kibana and Filebeat**:
+   ```bash
+   docker-compose up -d
+   ```
+Filebeat will monitor the `access.log` file in the `app-logs/` directory and send logs to Elasticsearch.
+With the `/log` route you can write sample logs to the `access.log` file, which will then automatically processed by Filebeat and sent to Elasticsearch. (adding logs manually is also possible)
+
 ### Helpful commands
 
 ```bash
