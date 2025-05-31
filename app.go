@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
+	"math/rand"
 	"net/http"
 	"strconv"
 
@@ -175,7 +176,9 @@ func (a *App) healthCheck(w http.ResponseWriter, r *http.Request) {
 }
 
 func (a *App) writeLog(w http.ResponseWriter, r *http.Request) {
-	log.Println("This is a sample log")
+	logID := fmt.Sprintf("%d", rand.Int63())
+	log.Println("[API] write log route called (ID: " + logID + ")")
+	respondWithJSON(w, http.StatusOK, map[string]string{"log_id": logID, "message": "Log entry created"})
 }
 
 func (a *App) initializeRoutes() {

@@ -1,56 +1,76 @@
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"This is a log message"}
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"Hello from JSON log"}
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"Hello from JSONadssadfa log"}
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"Hello from JSON log"}
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"Hello from JSON log"}
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"This is a log message"}
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"Hello from JSON log"}
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"Hello from JSONadssadfa log"}
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"Hello from JSON log"}
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"Hello from JSON log"}
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"This is a log message"}
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"Hello from JSON log"}
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"Hello from JSONadssadfa log"}
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"Hello from JSON log"}
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"Hello from JSON log"}
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"This is a log message"}
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"Hello from JSON log"}
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"Hello from JSONadssadfa log"}
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"Hello from JSON log"}
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"Hello from JSON log"}
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"This is a log message"}
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"Hello from JSON log"}
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"Hello from JSONadssadfa log"}
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"Hello from JSON log"}
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"Hello from JSON log"}
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"This is a log message"}
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"Hello from JSON log"}
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"Hello from JSONadssadfa log"}
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"Hello from JSON log"}
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"Hello from JSON log"}
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"This is a log message"}
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"Hello from JSON log"}
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"Hello from JSONadssadfa log"}
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"Hello from JSON log"}
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"Hello from JSON log"}
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"This is a log message"}
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"Hello from JSON log"}
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"Hello from JSONadssadfa log"}
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"Hello from JSON log"}
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"Hello from JSON log"}
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"This is a log message"}
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"Hello from JSON log"}
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"Hello from JSONadssadfa log"}
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"Hello from JSON log"}
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"Hello from JSON log"}
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"This is a log message"}
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"Hello from JSON log"}
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"Hello from JSONadssadfa log"}
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"Hello from JSON log"}
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"Hello from JSON log"}
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"THIS IS A NEW LOG"}
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"THIS IS A NEW LOG"}
-{"@timestamp":"2025-05-30T14:12:01Z", "level":"info", "message":"THIS IS A NEW LOG"}
+2025/05/31 11:00:56 [database] Action updated config (ID: 8596)
+2025/05/31 11:02:15 [API] Action failed (ID: 2044)
+2025/05/31 11:03:26 [auth] Action sent response (ID: 3610)
+2025/05/31 11:04:30 [database] Action logged in (ID: 6235)
+2025/05/31 11:05:19 [scheduler] Action retried (ID: 2579)
+2025/05/31 11:07:15 [API] Action completed (ID: 2487)
+2025/05/31 11:07:17 [payment] Action logged in (ID: 8799)
+2025/05/31 11:08:35 [API] Action failed (ID: 3025)
+2025/05/31 11:09:18 [auth] Action received request (ID: 5308)
+2025/05/31 11:10:56 [worker] Action completed (ID: 5383)
+2025/05/31 11:12:11 [payment] Action updated config (ID: 3684)
+2025/05/31 11:12:31 [database] Action received request (ID: 7240)
+2025/05/31 11:14:07 [database] Action received request (ID: 3666)
+2025/05/31 11:14:59 [scheduler] Action updated config (ID: 4106)
+2025/05/31 11:16:52 [scheduler] Action started (ID: 2198)
+2025/05/31 11:17:13 [payment] Action logged out (ID: 1886)
+2025/05/31 11:18:29 [logger] Action retried (ID: 9729)
+2025/05/31 11:19:19 [scheduler] Action sent response (ID: 5977)
+2025/05/31 11:20:04 [worker] Action completed (ID: 1755)
+2025/05/31 11:20:25 [auth] Action completed (ID: 2604)
+2025/05/31 11:21:27 [worker] Action started (ID: 4348)
+2025/05/31 11:22:52 [database] Action logged in (ID: 2071)
+2025/05/31 11:23:02 [auth] Action logged in (ID: 1781)
+2025/05/31 11:23:51 [database] Action received request (ID: 4242)
+2025/05/31 11:25:42 [logger] Action logged out (ID: 9723)
+2025/05/31 11:26:11 [logger] Action started (ID: 4467)
+2025/05/31 11:26:37 [scheduler] Action retried (ID: 8549)
+2025/05/31 11:27:46 [logger] Action failed (ID: 4665)
+2025/05/31 11:28:33 [auth] Action logged out (ID: 6148)
+2025/05/31 11:30:16 [database] Action sent response (ID: 9333)
+2025/05/31 11:31:51 [scheduler] Action completed (ID: 5896)
+2025/05/31 11:31:59 [worker] Action completed (ID: 8835)
+2025/05/31 11:33:39 [worker] Action retried (ID: 5912)
+2025/05/31 11:34:48 [worker] Action updated config (ID: 1251)
+2025/05/31 11:35:43 [logger] Action logged out (ID: 4057)
+2025/05/31 11:37:39 [logger] Action received request (ID: 9595)
+2025/05/31 11:38:11 [payment] Action sent response (ID: 1636)
+2025/05/31 11:38:37 [database] Action failed (ID: 6337)
+2025/05/31 11:40:14 [auth] Action completed (ID: 2768)
+2025/05/31 11:41:48 [payment] Action received request (ID: 9376)
+2025/05/31 11:42:56 [scheduler] Action received request (ID: 7267)
+2025/05/31 11:43:27 [API] Action sent response (ID: 3504)
+2025/05/31 11:44:52 [logger] Action logged in (ID: 6515)
+2025/05/31 11:46:34 [payment] Action sent response (ID: 3411)
+2025/05/31 11:47:30 [payment] Action received request (ID: 1783)
+2025/05/31 11:48:23 [database] Action sent response (ID: 8130)
+2025/05/31 11:49:45 [database] Action received request (ID: 1081)
+2025/05/31 11:50:02 [worker] Action completed (ID: 8126)
+2025/05/31 11:51:45 [worker] Action retried (ID: 8770)
+2025/05/31 11:53:29 [logger] Action failed (ID: 9110)
+2025/05/31 11:54:55 [worker] Action logged out (ID: 4184)
+2025/05/31 11:54:58 [payment] Action sent response (ID: 7117)
+2025/05/31 11:55:45 [scheduler] Action logged in (ID: 4052)
+2025/05/31 11:56:56 [logger] Action completed (ID: 7997)
+2025/05/31 11:57:36 [payment] Action failed (ID: 3295)
+2025/05/31 11:59:02 [auth] Action failed (ID: 4490)
+2025/05/31 11:59:16 [logger] Action updated config (ID: 8323)
+2025/05/31 12:00:01 [database] Action logged out (ID: 9558)
+2025/05/31 12:00:39 [payment] Action logged out (ID: 1724)
+2025/05/31 12:01:21 [scheduler] Action logged in (ID: 9055)
+2025/05/31 12:03:12 [database] Action completed (ID: 1992)
+2025/05/31 12:04:58 [API] Action started (ID: 1786)
+2025/05/31 12:05:39 [worker] Action completed (ID: 9669)
+2025/05/31 12:07:13 [API] Action sent response (ID: 6641)
+2025/05/31 12:08:14 [auth] Action logged out (ID: 5572)
+2025/05/31 12:09:57 [API] Action retried (ID: 8448)
+2025/05/31 12:11:05 [API] Action completed (ID: 1581)
+2025/05/31 12:12:18 [worker] Action started (ID: 8060)
+2025/05/31 12:13:53 [auth] Action failed (ID: 7449)
+2025/05/31 12:14:18 [worker] Action logged out (ID: 9198)
 
-
-
+2025/05/31 11:30:19 This is a log message from Go app
+2025/05/31 11:30:22 [API] write log route called (ID: 3083245137664133592)
+2025/05/31 11:30:28 [API] write log route called (ID: 4070485966677522910)
+2025/05/31 11:30:29 [API] write log route called (ID: 1165349696400877311)
+2025/05/31 11:30:30 [API] write log route called (ID: 8554711175549198838)
