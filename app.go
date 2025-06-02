@@ -1,12 +1,14 @@
 package main
 
 import (
+	"bufio"
 	"database/sql"
 	"encoding/json"
 	"fmt"
 	"log"
 	"math/rand"
 	"net/http"
+	"os"
 	"strconv"
 
 	"github.com/gorilla/mux"
@@ -177,7 +179,12 @@ func (a *App) healthCheck(w http.ResponseWriter, r *http.Request) {
 
 func (a *App) writeLog(w http.ResponseWriter, r *http.Request) {
 	logID := fmt.Sprintf("%d", rand.Int63())
-	log.Println("[API] write log route called (ID: " + logID + ")")
+	f, _ := os.OpenFile("app-logs/app.log", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+	writer := bufio.NewWriter(f)
+	logger := log.New(writer, "", log.LstdFlags)
+	logger.Println("[API] write log route called (ID: " + logID + ")")
+	writer.Flush()
+	f.Close()
 	respondWithJSON(w, http.StatusOK, map[string]string{"log_id": logID, "message": "Log entry created"})
 }
 

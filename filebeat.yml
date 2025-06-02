@@ -3,6 +3,7 @@ filebeat.inputs:
     id: go-json-logs
     paths:
       - /app-logs/app.log
+    scan_frequency: 3s
 
 output.elasticsearch:
   hosts: ["http://elasticsearch:9200"]
